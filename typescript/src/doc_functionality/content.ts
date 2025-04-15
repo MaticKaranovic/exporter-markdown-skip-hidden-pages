@@ -44,9 +44,9 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
                     offset: pageLevel,
                     type: "page"
                 })
-            }
             console.log(`${child.title}: hidden = ${child.isHidden}`)
             console.log(`Page: ${page.title}, Visibility: ${page.visibility}`)
+            }
         }
     }
 
