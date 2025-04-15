@@ -36,7 +36,7 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
 
         // Add pages
         for (let child of group.children) {
-            if (child.type === "Page" && !child.isHidden) {
+            if (child.type === "Page" && !child.type.isHidden) {
                 let page = child as DocumentationPage
                 items.push({
                     title: page.title,
@@ -45,6 +45,8 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
                     type: "page"
                 })
             }
+            console.log(`${child.title}: hidden = ${child.isHidden}`)
+            console.log(`Page: ${page.title}, Visibility: ${page.visibility}`)
         }
     }
 
