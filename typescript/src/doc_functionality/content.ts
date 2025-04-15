@@ -52,6 +52,7 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
                 })
         console.log(`${child.title}: hidden = ${(page as any).isHidden}`)
         console.log(`Page: ${page.title}, Visibility: ${page.visibility}`)
+        console.log("Full page object:", page);
             }
         }
     }
