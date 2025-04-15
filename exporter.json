@@ -1,6 +1,6 @@
 {
     "id": "io.supernova.documentation-markdown",
-    "name": "Markdown",
+    "name": "Markdown-skip-hidden-pages",
     "description": "Markdown Exporter",
     "author": "Jiri Trecak",
     "organization": "Supernova",
