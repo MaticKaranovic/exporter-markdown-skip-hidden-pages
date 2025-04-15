@@ -36,18 +36,14 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
 
         // Add pages
         for (let child of group.children) {
-            if (child.type === "Page") {
+            if (child.type === "Page" && !child.isHidden) {
                 let page = child as DocumentationPage
-
-                // Skip hidden pages
-                if (!page.isVisible) {
-                    items.push({
-                        title: page.title,
-                        url: pageUrl(page, prefix),
-                        offset: pageLevel,
-                        type: "page"
-                    })
-                }
+                items.push({
+                    title: page.title,
+                    url: pageUrl(page, prefix),
+                    offset: pageLevel,
+                    type: "page"
+                })
             }
         }
     }
@@ -60,4 +56,3 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
 export function offset(character: string, level: number, offset: number): string {
     return character.repeat(level * offset)
 }
-    
