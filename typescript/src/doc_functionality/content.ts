@@ -38,6 +38,12 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
         for (let child of group.children) {
             if (child.type === "Page") {
                 let page = child as DocumentationPage
+
+                // Skip hidden pages
+                if (page.visibility !== "visible") {
+                    continue
+                }
+
                 items.push({
                     title: page.title,
                     url: pageUrl(page, prefix),
