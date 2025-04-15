@@ -40,7 +40,7 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
                 let page = child as DocumentationPage
 
                 // Skip hidden pages
-                if (page.visibility !== "visible") {
+                if (!page.isVisible) {
                     continue
                 }
 
