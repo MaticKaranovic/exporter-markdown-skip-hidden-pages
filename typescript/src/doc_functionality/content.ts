@@ -36,16 +36,22 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
 
         // Add pages
         for (let child of group.children) {
-            if (child.type === "Page" && !child.type.isHidden) {
+            if (child.type === "Page") {
                 let page = child as DocumentationPage
+
+                // Skip hidden pages
+        if ((page as any).isHidden || page.visibility !== "visible") {
+            continue
+        }
+                
                 items.push({
                     title: page.title,
                     url: pageUrl(page, prefix),
                     offset: pageLevel,
                     type: "page"
                 })
-            console.log(`${child.title}: hidden = ${child.isHidden}`)
-            console.log(`Page: ${page.title}, Visibility: ${page.visibility}`)
+        console.log(`${child.title}: hidden = ${(page as any).isHidden}`)
+        console.log(`Page: ${page.title}, Visibility: ${page.visibility}`)
             }
         }
     }
