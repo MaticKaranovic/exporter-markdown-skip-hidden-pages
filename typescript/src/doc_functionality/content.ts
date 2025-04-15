@@ -40,15 +40,13 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
                 let page = child as DocumentationPage
 
                 // Skip hidden pages
-                if (!page.isVisible) {
-                    continue
-                }
-
-                items.push({
+                while (page.isVisible) {
+                    items.push({
                     title: page.title,
                     url: pageUrl(page, prefix),
                     offset: pageLevel,
                     type: "page"
+                }
                 })
             }
         }
