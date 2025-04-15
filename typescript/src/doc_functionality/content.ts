@@ -42,12 +42,12 @@ export function contentTree(groups: Array<DocumentationGroup>, pages: Array<Docu
                 // Skip hidden pages
                 if (!page.isVisible) {
                     items.push({
-                    title: page.title,
-                    url: pageUrl(page, prefix),
-                    offset: pageLevel,
-                    type: "page"
+                        title: page.title,
+                        url: pageUrl(page, prefix),
+                        offset: pageLevel,
+                        type: "page"
+                    })
                 }
-                })
             }
         }
     }
